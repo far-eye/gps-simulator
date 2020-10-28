@@ -1,3 +1,5 @@
+from typing import Optional
+
 import googlemaps
 from googlemaps.convert import decode_polyline, encode_polyline
 import json

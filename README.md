@@ -1,8 +1,8 @@
-Python script to simulate a car moving between two points on a map. 
+Python script to simulate a vehicle moving between two points on a map. 
 
-The primary purpose of this script is to simulate a car moving along a route and sending its current location every n seconds to a central server. Think simulating 1000's of uber cars driving in a city. 
+The primary purpose of this script is to simulate a vehicle moving along a route and sending its current location every n seconds to a central server. Think simulating 1000's of vehicles driving in a city. 
 
-The script generates an OrderDict of points. The key is the timestamp, value is the (lat, long) tuple representing the location of the car at that point in time. Time is relative, with t=0 indicating the time when the journey begins.
+The script generates an OrderDict of points. The key is the timestamp, value is the (lat, long) tuple representing the location of the vehicle at that point in time. Time is relative, with t=0 indicating the time when the journey begins.
 
 This script requires a google maps api key. 
 
@@ -12,7 +12,10 @@ Getting Started
 ```
 virtualenv -p python3 venv
 source venv/bin/activate
-pip install -r requirements.txt
+pip3 install -r requirements.txt
+uvicorn main:app --reload
+access http://localhost:8000/api/trace_route/addr_a/addr_b
+or in CLI
 python vehicles.py <API Key> "HashedIn Technologies, Bangalore" "Cubbon Park, Bangalore"
 ```
 
